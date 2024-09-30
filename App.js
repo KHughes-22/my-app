@@ -1,15 +1,12 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { Button, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
+import HomeScreen from './HomeScreen';
+import FilmLog from './FilmLog';
+import LightMeter from './AmbientLightMeter';
+import ViewFinder from './ViewFinder';
+import AmbientLightMeter from './AmbientLightMeter';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +15,9 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="FilmLog" component={FilmLog} />
+        <Stack.Screen name="AmbientLightMeter" component={AmbientLightMeter} />
+        <Stack.Screen name="ViewFinder" component={ViewFinder} />
       </Stack.Navigator>
     </NavigationContainer>
   );
